@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const OpenAI = require("openai");
+const OpenAIApi = require("openai");
 const { Octokit } = require("@octokit/core");
 require("dotenv").config();
 
@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
   res.status(200).send("Welcome to Code-Converter");
 });
 
-const openai = new OpenAI({
+const openai = new OpenAIApi({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
